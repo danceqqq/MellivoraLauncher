@@ -1,0 +1,71 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+    <ApplicationTitle>Помогатор</ApplicationTitle>
+    <AssemblyTitle>Помогатор</AssemblyTitle>
+    <Product>Помогатор</Product>
+    <!-- Встроенный Python + shazamio: каталог в репозитории; при сборке докачивается при необходимости -->
+    <ShazamPyEmbedDir>$(MSBuildProjectDirectory)\Assets\ShazamIO\py-embed</ShazamPyEmbedDir>
+    <SkipShazamEmbedSetup Condition="'$(SkipShazamEmbedSetup)' == ''">false</SkipShazamEmbedSetup>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Update="Assets\**\*">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="giveawayrule\**\*">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <Resource Include="svg\detroit.svg" />
+    <Resource Include="svg\car.svg" />
+    <Resource Include="svg\clothes.svg" />
+    <Resource Include="svg\giveaway.svg" />
+    <Resource Include="svg\keyboard.svg" />
+    <Resource Include="svg\mellivora.svg" />
+    <Resource Include="svg\scripts.svg" />
+    <Resource Include="svg\settings.svg" />
+    <Resource Include="svg\vpn.svg" />
+    <Resource Include="svg\shazam.svg" />
+    <Resource Include="svg\shazam_button.svg" />
+    <Resource Include="svg\back.svg" />
+    <Resource Include="svg\telegram.svg" />
+    <Resource Include="svg\install.svg" />
+    <Resource Include="svg\delete.svg" />
+    <Resource Include="svg\debug.svg" />
+    <Resource Include="svg\checkboxoff.svg" />
+    <Resource Include="svg\checkboxon.svg" />
+    <Resource Include="svg\cloudflare.svg" />
+    <Resource Include="svg\amnezia.svg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="mellivoravpn\**\*">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Web.WebView2" Version="1.0.3856.49" />
+    <PackageReference Include="NAudio" Version="2.3.0" />
+    <PackageReference Include="SharpVectors.Wpf" Version="1.8.5" />
+  </ItemGroup>
+
+  <!-- Перед сборкой: embeddable Python + pip install shazamio → Assets\ShazamIO\py-embed (копируется в bin как остальные Assets). Пропуск: /p:SkipShazamEmbedSetup=true -->
+  <Target Name="EnsureShazamEmbedPython" BeforeTargets="BeforeBuild" Condition="'$(DesignTimeBuild)' != 'true' And '$(SkipShazamEmbedSetup)' != 'true'">
+    <Exec Command="powershell.exe -NoProfile -NonInteractive -ExecutionPolicy Bypass -File &quot;$(MSBuildProjectDirectory)\Assets\ShazamIO\setup-embed-python.ps1&quot; -EmbedRoot &quot;$(ShazamPyEmbedDir)&quot;" />
+  </Target>
+
+  <!-- py-embed создаётся в BeforeBuild; копируем в bin перед CopyFilesToOutputDirectory (AssignTargetPaths был бы слишком рано) -->
+  <Target Name="CopyShazamPyEmbedToOutput" BeforeTargets="CopyFilesToOutputDirectory" DependsOnTargets="EnsureShazamEmbedPython" Condition="'$(DesignTimeBuild)' != 'true' And Exists('$(ShazamPyEmbedDir)\python.exe')">
+    <ItemGroup>
+      <_ShazamPyEmbedFile Include="$(ShazamPyEmbedDir)\**\*" />
+    </ItemGroup>
+    <Copy SourceFiles="@(_ShazamPyEmbedFile)" DestinationFiles="@(_ShazamPyEmbedFile->'$(TargetDir)Assets\ShazamIO\py-embed\%(RecursiveDir)%(Filename)%(Extension)')" SkipUnchangedFiles="true" />
+  </Target>
+
+</Project>

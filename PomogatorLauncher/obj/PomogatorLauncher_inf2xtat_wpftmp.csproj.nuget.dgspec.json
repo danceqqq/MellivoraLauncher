@@ -1,0 +1,102 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\MyAngel\\Desktop\\PluginsFolderMaje\\MellivoraLauncher\\MellivoraLauncher\\PomogatorLauncher\\PomogatorLauncher.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\MyAngel\\Desktop\\PluginsFolderMaje\\MellivoraLauncher\\MellivoraLauncher\\PomogatorLauncher\\PomogatorLauncher.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\MyAngel\\Desktop\\PluginsFolderMaje\\MellivoraLauncher\\MellivoraLauncher\\PomogatorLauncher\\PomogatorLauncher.csproj",
+        "projectName": "PomogatorLauncher",
+        "projectPath": "C:\\Users\\MyAngel\\Desktop\\PluginsFolderMaje\\MellivoraLauncher\\MellivoraLauncher\\PomogatorLauncher\\PomogatorLauncher.csproj",
+        "packagesPath": "C:\\Users\\MyAngel\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\MyAngel\\Desktop\\PluginsFolderMaje\\MellivoraLauncher\\MellivoraLauncher\\PomogatorLauncher\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\MyAngel\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0-windows"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0-windows7.0": {
+            "targetAlias": "net8.0-windows",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net8.0-windows7.0": {
+          "targetAlias": "net8.0-windows",
+          "dependencies": {
+            "Microsoft.Web.WebView2": {
+              "target": "Package",
+              "version": "[1.0.3856.49, )"
+            },
+            "NAudio": {
+              "target": "Package",
+              "version": "[2.3.0, )"
+            },
+            "SharpVectors.Wpf": {
+              "target": "Package",
+              "version": "[1.8.5, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[8.0.20, 8.0.20]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[8.0.20, 8.0.20]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[8.0.20, 8.0.20]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[8.0.20, 8.0.20]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            },
+            "Microsoft.WindowsDesktop.App.WPF": {
+              "privateAssets": "none"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.305/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

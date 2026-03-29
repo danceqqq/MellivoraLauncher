@@ -1,0 +1,2 @@
+# ShazamIO: https://github.com/shazamio/ShazamIO
+shazamio>=0.7.0
