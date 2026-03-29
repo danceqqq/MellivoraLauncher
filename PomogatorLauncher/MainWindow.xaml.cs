@@ -47,9 +47,14 @@ public partial class MainWindow : Window
         _statusPingStoryboard = TryFindResource("StatusPingStoryboard") as Storyboard;
 
         _monitorTimer = new DispatcherTimer { Interval = TimeSpan.FromMinutes(5) };
-        _monitorTimer.Tick += (_, _) => _ = RefreshMonitoringAsync();
+        _monitorTimer.Tick += (_, _) =>
+        {
+            RefreshCommunityCounters();
+            _ = RefreshMonitoringAsync();
+        };
         _monitorTimer.Start();
 
+        RefreshCommunityCounters();
         _ = TryHttpMonitoringFallbackAsync();
         _ = InitMonitorWebViewAsync();
         ApplyTgBypassFromSavedSettings();
@@ -122,6 +127,13 @@ public partial class MainWindow : Window
             });
             await TryHttpMonitoringFallbackAsync();
         }
+    }
+
+    private void RefreshCommunityCounters()
+    {
+        var dir = AppContext.BaseDirectory;
+        DiscordCountText.Text = CounterJson.ReadDisplay(Path.Combine(dir, "counter", "discord.json"));
+        FamilyCountText.Text = CounterJson.ReadDisplay(Path.Combine(dir, "counter", "family.json"));
     }
 
     private async Task RefreshMonitoringAsync()

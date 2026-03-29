@@ -270,81 +270,120 @@
                     <StackPanel>
                         <Grid>
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*"/>
                                 <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
                             </Grid.ColumnDefinitions>
-                            <StackPanel Grid.Column="0" VerticalAlignment="Center">
-                                <TextBlock Text="Помогатор" FontSize="26" FontWeight="SemiBold"
-                                           Foreground="{StaticResource TextPrimary}" FontFamily="Segoe UI Variable Display, Segoe UI"/>
-                                <TextBlock Text="Разделы Mellivora" FontSize="13"
-                                           Foreground="{StaticResource TextMuted}" Margin="0,4,0,0"/>
-                            </StackPanel>
+                            <Border Grid.Column="0"
+                                    Padding="2,0"
+                                    Background="Transparent"
+                                    VerticalAlignment="Top"
+                                    Margin="0,0,16,0">
+                                <svgc:SvgViewbox x:Name="LogoMellivora"
+                                                 Stretch="Uniform"
+                                                 Width="128" Height="70"
+                                                 Source="pack://application:,,,/svg/mellivora.svg"/>
+                            </Border>
                             <StackPanel Grid.Column="1"
-                                        VerticalAlignment="Top"
-                                        HorizontalAlignment="Right"
-                                        MinWidth="216">
-                                <Border Padding="2,0" Background="Transparent" HorizontalAlignment="Center">
-                                    <svgc:SvgViewbox x:Name="LogoMellivora"
-                                                     Stretch="Uniform"
-                                                     Width="128" Height="70"
-                                                     Source="pack://application:,,,/svg/mellivora.svg"/>
-                                </Border>
+                                        VerticalAlignment="Center"
+                                        HorizontalAlignment="Left">
                                 <TextBlock Text="Онлайн сервера"
                                            FontSize="11"
                                            FontWeight="SemiBold"
                                            Foreground="#FFE0015B"
-                                           HorizontalAlignment="Center"
-                                           Margin="0,6,0,6"/>
-                                <Border Background="#550F0F0F"
-                                        CornerRadius="10"
-                                        Padding="11,10"
-                                        MinWidth="218"
-                                        HorizontalAlignment="Stretch">
-                                    <Grid>
-                                        <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="Auto"/>
-                                            <ColumnDefinition Width="*"/>
-                                            <ColumnDefinition Width="Auto"/>
-                                        </Grid.ColumnDefinitions>
-                                        <Border Grid.Column="0"
-                                                Width="28" Height="28"
-                                                VerticalAlignment="Center"
-                                                Margin="0,0,10,0">
-                                            <svgc:SvgViewbox Stretch="Uniform"
-                                                             Source="pack://application:,,,/svg/detroit.svg"/>
-                                        </Border>
-                                        <TextBlock x:Name="PlayerCountText"
-                                                   Grid.Column="1"
-                                                   Text="…"
-                                                   FontSize="14"
-                                                   FontWeight="SemiBold"
-                                                   Foreground="#FFE0015B"
-                                                   VerticalAlignment="Center"
-                                                   HorizontalAlignment="Center"/>
-                                        <Grid Grid.Column="2"
-                                              Width="22" Height="22"
-                                              VerticalAlignment="Center"
-                                              Margin="10,0,0,0">
-                                            <Ellipse x:Name="StatusPingEllipse"
-                                                     Width="14" Height="14"
-                                                     Fill="#6634D399"
-                                                     Opacity="0"
-                                                     IsHitTestVisible="False"
-                                                     HorizontalAlignment="Center"
-                                                     VerticalAlignment="Center"
-                                                     RenderTransformOrigin="0.5,0.5">
-                                                <Ellipse.RenderTransform>
-                                                    <ScaleTransform x:Name="StatusPingScale" ScaleX="1" ScaleY="1"/>
-                                                </Ellipse.RenderTransform>
-                                            </Ellipse>
-                                            <Ellipse x:Name="StatusCoreEllipse"
-                                                     Width="7" Height="7"
-                                                     Fill="#FFEF4444"
-                                                     HorizontalAlignment="Center"
-                                                     VerticalAlignment="Center"/>
+                                           HorizontalAlignment="Left"
+                                           Margin="0,0,0,6"/>
+                                <StackPanel Orientation="Horizontal">
+                                    <Border Background="#550F0F0F"
+                                            CornerRadius="10"
+                                            Padding="8,8"
+                                            HorizontalAlignment="Left">
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="Auto"/>
+                                                <ColumnDefinition Width="Auto"/>
+                                                <ColumnDefinition Width="Auto"/>
+                                            </Grid.ColumnDefinitions>
+                                            <Border Grid.Column="0"
+                                                    Width="28" Height="28"
+                                                    VerticalAlignment="Center"
+                                                    Margin="0,0,6,0">
+                                                <svgc:SvgViewbox Stretch="Uniform"
+                                                                 Source="pack://application:,,,/svg/detroit.svg"/>
+                                            </Border>
+                                            <TextBlock x:Name="PlayerCountText"
+                                                       Grid.Column="1"
+                                                       Text="…"
+                                                       FontSize="14"
+                                                       FontWeight="SemiBold"
+                                                       Foreground="#FFE0015B"
+                                                       VerticalAlignment="Center"
+                                                       HorizontalAlignment="Center"
+                                                       Margin="0,0,6,0"/>
+                                            <Grid Grid.Column="2"
+                                                  Width="22" Height="22"
+                                                  VerticalAlignment="Center"
+                                                  Margin="0,0,0,0">
+                                                <Ellipse x:Name="StatusPingEllipse"
+                                                         Width="14" Height="14"
+                                                         Fill="#6634D399"
+                                                         Opacity="0"
+                                                         IsHitTestVisible="False"
+                                                         HorizontalAlignment="Center"
+                                                         VerticalAlignment="Center"
+                                                         RenderTransformOrigin="0.5,0.5">
+                                                    <Ellipse.RenderTransform>
+                                                        <ScaleTransform x:Name="StatusPingScale" ScaleX="1" ScaleY="1"/>
+                                                    </Ellipse.RenderTransform>
+                                                </Ellipse>
+                                                <Ellipse x:Name="StatusCoreEllipse"
+                                                         Width="7" Height="7"
+                                                         Fill="#FFEF4444"
+                                                         HorizontalAlignment="Center"
+                                                         VerticalAlignment="Center"/>
+                                            </Grid>
                                         </Grid>
-                                    </Grid>
-                                </Border>
+                                    </Border>
+                                    <Border Background="#550F0F0F"
+                                            CornerRadius="10"
+                                            Padding="8,8"
+                                            Margin="6,0,0,0"
+                                            HorizontalAlignment="Left">
+                                        <StackPanel Orientation="Horizontal">
+                                            <Border Width="28" Height="28"
+                                                    VerticalAlignment="Center"
+                                                    Margin="0,0,6,0">
+                                                <svgc:SvgViewbox Stretch="Uniform"
+                                                                 Source="pack://application:,,,/svg/discordcounter.svg"/>
+                                            </Border>
+                                            <TextBlock x:Name="DiscordCountText"
+                                                       Text="—"
+                                                       FontSize="14"
+                                                       FontWeight="SemiBold"
+                                                       Foreground="#FFE0015B"
+                                                       VerticalAlignment="Center"/>
+                                        </StackPanel>
+                                    </Border>
+                                    <Border Background="#550F0F0F"
+                                            CornerRadius="10"
+                                            Padding="8,8"
+                                            Margin="6,0,0,0"
+                                            HorizontalAlignment="Left">
+                                        <StackPanel Orientation="Horizontal">
+                                            <Border Width="28" Height="28"
+                                                    VerticalAlignment="Center"
+                                                    Margin="0,0,6,0">
+                                                <svgc:SvgViewbox Stretch="Uniform"
+                                                                 Source="pack://application:,,,/svg/familycount.svg"/>
+                                            </Border>
+                                            <TextBlock x:Name="FamilyCountText"
+                                                       Text="—"
+                                                       FontSize="14"
+                                                       FontWeight="SemiBold"
+                                                       Foreground="#FFE0015B"
+                                                       VerticalAlignment="Center"/>
+                                        </StackPanel>
+                                    </Border>
+                                </StackPanel>
                             </StackPanel>
                         </Grid>
                         <Rectangle Height="1" Fill="#4DE0015B" Margin="0,14,0,0" HorizontalAlignment="Stretch"/>

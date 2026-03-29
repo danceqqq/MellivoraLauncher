@@ -4104,3 +4104,6 @@ C:\Users\MyAngel\Desktop\PluginsFolderMaje\MellivoraLauncher\MellivoraLauncher\P
 C:\Users\MyAngel\Desktop\PluginsFolderMaje\MellivoraLauncher\MellivoraLauncher\PomogatorLauncher\bin\Debug\net8.0-windows\mellivoravpn\warpcfg\mihomo-windows-amd64-v3-go125.exe
 C:\Users\MyAngel\Desktop\PluginsFolderMaje\MellivoraLauncher\MellivoraLauncher\PomogatorLauncher\bin\Debug\net8.0-windows\mellivoravpn\warpcfg\.pomogator_mihomo_version
 C:\Users\MyAngel\Desktop\PluginsFolderMaje\MellivoraLauncher\MellivoraLauncher\PomogatorLauncher\bin\Debug\net8.0-windows\mellivoravpn\warpcfg\mihomo.exe
+c:\Users\MyAngel\Desktop\PluginsFolderMaje\MellivoraLauncher\MellivoraLauncher\PomogatorLauncher\bin\Debug\net8.0-windows\counter\discord.json
+c:\Users\MyAngel\Desktop\PluginsFolderMaje\MellivoraLauncher\MellivoraLauncher\PomogatorLauncher\bin\Debug\net8.0-windows\counter\family.json
+c:\Users\MyAngel\Desktop\PluginsFolderMaje\MellivoraLauncher\MellivoraLauncher\PomogatorLauncher\obj\Debug\net8.0-windows\PomogatorLauncher.sourcelink.json

@@ -21,6 +21,9 @@
     <None Update="giveawayrule\**\*">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Update="counter\**\*">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <Resource Include="svg\detroit.svg" />
     <Resource Include="svg\car.svg" />
     <Resource Include="svg\clothes.svg" />
@@ -41,6 +44,8 @@
     <Resource Include="svg\checkboxon.svg" />
     <Resource Include="svg\cloudflare.svg" />
     <Resource Include="svg\amnezia.svg" />
+    <Resource Include="svg\discordcounter.svg" />
+    <Resource Include="svg\familycount.svg" />
   </ItemGroup>
 
   <ItemGroup>
