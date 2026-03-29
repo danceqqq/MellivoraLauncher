@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\MyAngel\\Desktop\\PluginsFolderMaje\\MellivoraLauncher\\MellivoraLauncher\\PomogatorLauncher\\PomogatorLauncher.csproj": {}
+    "c:\\Users\\MyAngel\\Desktop\\PluginsFolderMaje\\MellivoraLauncher\\MellivoraLauncher\\PomogatorLauncher\\PomogatorLauncher.csproj": {}
   },
   "projects": {
-    "C:\\Users\\MyAngel\\Desktop\\PluginsFolderMaje\\MellivoraLauncher\\MellivoraLauncher\\PomogatorLauncher\\PomogatorLauncher.csproj": {
+    "c:\\Users\\MyAngel\\Desktop\\PluginsFolderMaje\\MellivoraLauncher\\MellivoraLauncher\\PomogatorLauncher\\PomogatorLauncher.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\MyAngel\\Desktop\\PluginsFolderMaje\\MellivoraLauncher\\MellivoraLauncher\\PomogatorLauncher\\PomogatorLauncher.csproj",
+        "projectUniqueName": "c:\\Users\\MyAngel\\Desktop\\PluginsFolderMaje\\MellivoraLauncher\\MellivoraLauncher\\PomogatorLauncher\\PomogatorLauncher.csproj",
         "projectName": "PomogatorLauncher",
-        "projectPath": "C:\\Users\\MyAngel\\Desktop\\PluginsFolderMaje\\MellivoraLauncher\\MellivoraLauncher\\PomogatorLauncher\\PomogatorLauncher.csproj",
+        "projectPath": "c:\\Users\\MyAngel\\Desktop\\PluginsFolderMaje\\MellivoraLauncher\\MellivoraLauncher\\PomogatorLauncher\\PomogatorLauncher.csproj",
         "packagesPath": "C:\\Users\\MyAngel\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\MyAngel\\Desktop\\PluginsFolderMaje\\MellivoraLauncher\\MellivoraLauncher\\PomogatorLauncher\\obj\\",
+        "outputPath": "c:\\Users\\MyAngel\\Desktop\\PluginsFolderMaje\\MellivoraLauncher\\MellivoraLauncher\\PomogatorLauncher\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\MyAngel\\AppData\\Roaming\\NuGet\\NuGet.Config"

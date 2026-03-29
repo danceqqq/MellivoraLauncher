@@ -49,12 +49,12 @@ public partial class MainWindow : Window
         _monitorTimer = new DispatcherTimer { Interval = TimeSpan.FromMinutes(5) };
         _monitorTimer.Tick += (_, _) =>
         {
-            RefreshCommunityCounters();
+            _ = RefreshCommunityCountersAsync();
             _ = RefreshMonitoringAsync();
         };
         _monitorTimer.Start();
 
-        RefreshCommunityCounters();
+        _ = RefreshCommunityCountersAsync();
         _ = TryHttpMonitoringFallbackAsync();
         _ = InitMonitorWebViewAsync();
         ApplyTgBypassFromSavedSettings();
@@ -129,11 +129,37 @@ public partial class MainWindow : Window
         }
     }
 
-    private void RefreshCommunityCounters()
+    private async Task RefreshCommunityCountersAsync()
     {
         var dir = AppContext.BaseDirectory;
-        DiscordCountText.Text = CounterJson.ReadDisplay(Path.Combine(dir, "counter", "discord.json"));
-        FamilyCountText.Text = CounterJson.ReadDisplay(Path.Combine(dir, "counter", "family.json"));
+        var discordPath = Path.Combine(dir, "counter", "discord.json");
+        var familyPath = Path.Combine(dir, "counter", "family.json");
+
+        try
+        {
+            using var cts = new CancellationTokenSource(TimeSpan.FromSeconds(25));
+            var token = cts.Token;
+            var discordTask = CounterJson.FetchDisplayOrFallbackAsync(CommunityCounterUrls.Discord, discordPath, token);
+            var familyTask = CounterJson.FetchDisplayOrFallbackAsync(CommunityCounterUrls.Family, familyPath, token);
+            await Task.WhenAll(discordTask, familyTask).ConfigureAwait(false);
+
+            var d = await discordTask.ConfigureAwait(false);
+            var f = await familyTask.ConfigureAwait(false);
+
+            await Dispatcher.InvokeAsync(() =>
+            {
+                DiscordCountText.Text = d;
+                FamilyCountText.Text = f;
+            });
+        }
+        catch
+        {
+            await Dispatcher.InvokeAsync(() =>
+            {
+                DiscordCountText.Text = CounterJson.ReadDisplay(discordPath);
+                FamilyCountText.Text = CounterJson.ReadDisplay(familyPath);
+            });
+        }
     }
 
     private async Task RefreshMonitoringAsync()
