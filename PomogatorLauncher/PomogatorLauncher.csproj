@@ -46,6 +46,11 @@
     <Resource Include="svg\amnezia.svg" />
     <Resource Include="svg\discordcounter.svg" />
     <Resource Include="svg\familycount.svg" />
+    <Resource Include="svg\autoorange.svg" />
+    <Resource Include="svg\autotree.svg" />
+    <Resource Include="svg\autosewing.svg" />
+    <Resource Include="svg\arrowdown.svg" />
+    <Resource Include="svg\arrowup.svg" />
   </ItemGroup>
 
   <ItemGroup>

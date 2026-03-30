@@ -102,6 +102,16 @@ public partial class MainWindow
         RefreshMellivoraWarpCfgUi();
     }
 
+    private void OpenScriptsPanel()
+    {
+        ScriptsOverlay.Visibility = Visibility.Visible;
+    }
+
+    private void ScriptsHomeButton_Click(object sender, RoutedEventArgs e)
+    {
+        ScriptsOverlay.Visibility = Visibility.Collapsed;
+    }
+
     private void MellivoraVpnHomeButton_Click(object sender, RoutedEventArgs e)
     {
         MellivoraVpnOverlay.Visibility = Visibility.Collapsed;

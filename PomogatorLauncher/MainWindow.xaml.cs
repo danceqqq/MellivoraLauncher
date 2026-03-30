@@ -419,6 +419,12 @@ public partial class MainWindow : Window
             return;
         }
 
+        if (title == "Автоматизированные скрипты")
+        {
+            OpenScriptsPanel();
+            return;
+        }
+
         MessageBox.Show($"«{title}» скоро откроется здесь.", "Помогатор", MessageBoxButton.OK, MessageBoxImage.Information);
     }
 
