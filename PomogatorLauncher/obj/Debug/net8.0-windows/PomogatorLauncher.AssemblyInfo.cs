@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PomogatorLauncher")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+536b91621912799940a287606479f0d2a98558f5")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4744cf120af7215e9dd6037869ffbf3cce88a0f8")]
 [assembly: System.Reflection.AssemblyProductAttribute("Помогатор")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Помогатор")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
